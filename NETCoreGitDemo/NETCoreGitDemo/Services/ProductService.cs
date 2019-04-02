@@ -16,11 +16,13 @@ namespace NETCoreGitDemo.Services
             {
                 new Product
                 {
-                Id=1,Name="面包"
+                    Id=1,
+                    Name="面包"
                 },
                 new Product
                 {
-                Id=2,Name="牛奶"
+                    Id=2,
+                    Name="牛奶"
                 }
             };
         }
