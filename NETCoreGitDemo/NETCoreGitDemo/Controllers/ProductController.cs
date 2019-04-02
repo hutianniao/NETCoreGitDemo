@@ -14,5 +14,12 @@ namespace NETCoreGitDemo.Controllers
             return Content("hello APi !");
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetProduct(int id)
+        {
+
+            return Content($"hello APi id为{id} !");
+        }
+
     }
 }
