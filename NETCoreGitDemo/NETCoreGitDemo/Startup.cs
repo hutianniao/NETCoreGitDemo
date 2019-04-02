@@ -27,7 +27,7 @@ namespace NETCoreGitDemo
                 app.UseDeveloperExceptionPage();
             }
 
-            //mvc
+            //mvc 和上面addMvc对应
             app.UseMvc();
 
             app.Run(async (context) =>
