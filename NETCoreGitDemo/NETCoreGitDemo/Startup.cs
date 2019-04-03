@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace NETCoreGitDemo
@@ -27,7 +28,16 @@ namespace NETCoreGitDemo
                 app.UseDeveloperExceptionPage();
             }
 
-            //mvc 和上面addMvc对应
+
+            if(env.IsProduction())
+            {
+                app.UseForwardedHeaders(new ForwardedHeadersOptions
+                {
+                    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+                });
+                
+            }
+
             app.UseMvc();
 
             app.Run(async (context) =>
